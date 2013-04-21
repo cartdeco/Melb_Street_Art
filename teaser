@@ -1,0 +1,37 @@
+<div id='teaser'>
+<p class="title"><span class="bullet">✪</span> {{{name}}}</p>
+<img alt='{{{name}}}' src='{{{url}}}'>
+<p><cite>photo: {{{username}}}</cite></p>
+</div>
+
+<style>
+#teaser {
+  padding:5px;
+}
+#teaser .title {
+  font-family:Impact,'Helvetica Narrow';
+  font-size:14px;
+  color:#ff0;
+margin-bottom:10px;
+  text-shadow:-2px -2px 0 #333,
+	-2px 0px 0 #333,
+	-2px 2px 0 #333, 
+	0px 2px 0 #333,
+	2px 2px 0 #333,
+	2px 0px 0 #333,
+	2px -2px 0 #333;
+}
+#teaser .title .bullet {
+  color:#9f0;
+}
+#teaser img {
+	width: 60px;
+	border:4px solid #000;
+	border-radius:5px;
+	box-shadow: 0px 0px 2px 6px #f9ed29;
+}
+cite {
+	font-family: courier, 'courier new', fixed-width;
+	font-size:80%;
+}
+</style>
