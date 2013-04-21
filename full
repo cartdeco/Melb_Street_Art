@@ -1,0 +1,41 @@
+<div id='full'>
+<p class="title"><span class="bullet">✪</span> {{{name}}}</p>
+<a href="{{{url-p}}}" title="flickr page for {{{name}}} by {{{username}}}" target="_blank"><img alt='{{{name}}} by {{{username}}}' src='{{{url}}}'></a>
+<p><cite>photo: {{{username}}}</cite></p>
+</div>
+
+<style>
+#full {
+  padding:5px;
+}
+#full .title {
+  font-size:140%;
+  font-weight:bold;
+  font-family:Impact,'Helvetica Narrow';
+  color:#ff0;
+  margin-bottom:10px;
+  padding-right:14px;
+  text-shadow:-2px -2px 0 #333,
+	-2px 0px 0 #333,
+	-2px 2px 0 #333, 
+	0px 2px 0 #333,
+	2px 2px 0 #333,
+	2px 0px 0 #333,
+	2px -2px 0 #333;
+}
+#full .title .bullet {
+  color:#9f0;
+}
+#full img {
+	border:4px solid #000;
+	border-radius:5px;
+	box-shadow: 0px 0px 2px 6px #f9ed29;
+}
+#full a:hover img {
+	box-shadow: 0px 0px 4px 4px #9f0;
+}
+cite {
+	font-family: courier, 'courier new', fixed-width;
+	font-size:80%;
+}
+</style>
