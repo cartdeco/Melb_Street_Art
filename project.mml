@@ -1,0 +1,379 @@
+{
+  "bounds": [
+    144.826,
+    -37.9049,
+    145.0989,
+    -37.7322
+  ],
+  "center": [
+    144.9633,
+    -37.8149,
+    14
+  ],
+  "format": "jpeg95",
+  "interactivity": {
+    "layer": "flickrfull",
+    "template_teaser": "<div id='teaser'>\n<p class=\"title\"><span class=\"bullet\">✪</span> {{{name}}}</p>\n<img alt='{{{name}}}' src='{{{url}}}'>\n<p><cite>photo: {{{username}}}</cite></p>\n</div>\n\n<style>\n#teaser {\n\tpadding:5px;\n}\n#teaser .title {\n  font-family:Impact,'Helvetica Narrow';\n  font-size:14px;\n  color:#ff0;\nmargin-bottom:10px;\n  text-shadow:-2px -2px 0 #333,\n\t-2px 0px 0 #333,\n\t-2px 2px 0 #333, \n\t0px 2px 0 #333,\n\t2px 2px 0 #333,\n\t2px 0px 0 #333,\n\t2px -2px 0 #333;\n}\n#teaser .title .bullet {\n  color:#9f0;\n}\n#teaser img {\n\twidth: 60px;\n\tborder:4px solid #000;\n\tborder-radius:5px;\n\tbox-shadow: 0px 0px 2px 6px #f9ed29;\n}\ncite {\n\tfont-family: courier, 'courier new', fixed-width;\n\tfont-size:80%;\n}\n</style>",
+    "template_full": "<div id='full'>\n<p class=\"title\"><span class=\"bullet\">✪</span> {{{name}}}</p>\n<a href=\"{{{url-p}}}\" title=\"flickr page for {{{name}}} by {{{username}}}\" target=\"_blank\"><img alt='{{{name}}} by {{{username}}}' src='{{{url}}}'></a>\n<p><cite>photo: {{{username}}}</cite></p>\n</div>\n\n<style>\n#full {\n\tpadding:5px;\n}\n#full .title {\n  font-size:140%;\n  font-weight:bold;\n  font-family:Impact,'Helvetica Narrow';\n  color:#ff0;\n  margin-bottom:10px;\n  padding-right:14px;\n  text-shadow:-2px -2px 0 #333,\n\t-2px 0px 0 #333,\n\t-2px 2px 0 #333, \n\t0px 2px 0 #333,\n\t2px 2px 0 #333,\n\t2px 0px 0 #333,\n\t2px -2px 0 #333;\n}\n#full .title .bullet {\n  color:#9f0;\n}\n#full img {\n\tborder:4px solid #000;\n\tborder-radius:5px;\n\tbox-shadow: 0px 0px 2px 6px #f9ed29;\n}\n#full a:hover img {\n\tbox-shadow: 0px 0px 4px 4px #9f0;\n}\ncite {\n\tfont-family: courier, 'courier new', fixed-width;\n\tfont-size:80%;\n}\n</style>",
+    "template_location": "",
+    "fields": [
+      "name",
+      "url-p",
+      "username",
+      "url"
+    ]
+  },
+  "minzoom": 11,
+  "maxzoom": 18,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "palette.mss",
+    "labels.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      },
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "coastline",
+      "class": "",
+      "Datasource": {
+        "file": "/home/ubuntu/water-polygons-split-3857/water_polygons.shp"
+      },
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "coastline"
+    },
+    {
+      "extent": [
+        141.00003995839717,
+        -39.49994995987938,
+        149.999959944202,
+        -34.00000993379165
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from planet_osm_polygon where waterway like 'riverbank') as river_areas",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696052.65,-4793540.24,16697919.16,-4028803.36",
+        "dbname": "gis_new",
+        "host": "localhost",
+        "port": "5432",
+        "user": "ubuntu",
+        "password": "ubuntu"
+      },
+      "id": "river_areas",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "river_areas"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        141.0000099546667,
+        -39.49994995987938,
+        149.99998994793248,
+        -34.00000993379165
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from planet_osm_line where waterway like 'river') as rivers",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696049.31,-4793540.24,16697922.5,-4028803.36",
+        "dbname": "gis_new",
+        "host": "localhost",
+        "port": "5432",
+        "user": "ubuntu",
+        "password": "ubuntu"
+      },
+      "id": "rivers",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "rivers"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        141.0000099546667,
+        -38.99997994588071,
+        149.99998994793248,
+        -34.00000993379165
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "planet_osm_line",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696049.31,-4721668.7,16697922.5,-4028803.36",
+        "dbname": "gis",
+        "host": "localhost",
+        "user": "ubuntu",
+        "password": "ubuntu",
+        "id": "ways",
+        "project": "Street_Art_Test",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "waysfluro",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "waysfluro",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        141.0000099546667,
+        -39.49994995987938,
+        149.99998994793248,
+        -34.00000993379165
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "planet_osm_line",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696049.31,-4793540.24,16697922.5,-4028803.36",
+        "dbname": "gis_new",
+        "host": "localhost",
+        "port": "5432",
+        "user": "ubuntu",
+        "password": "ubuntu"
+      },
+      "id": "waysneutral",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "waysneutral"
+    },
+    {
+      "extent": [
+        141.00003995839717,
+        -39.49994995987938,
+        149.999959944202,
+        -34.00000993379165
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "planet_osm_polygon",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696052.65,-4793540.24,16697919.16,-4028803.36",
+        "dbname": "gis_new",
+        "host": "localhost",
+        "port": "5432",
+        "user": "ubuntu",
+        "password": "ubuntu"
+      },
+      "id": "buildings",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "buildings"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        144.96416,
+        -37.81737,
+        144.96601,
+        -37.81394
+      ],
+      "id": "latlongft",
+      "class": "",
+      "Datasource": {
+        "file": "https://dl.dropbox.com/s/fbxwdafmwnpf6mm/latlongFT.csv",
+        "id": "latlongft",
+        "project": "Street_Art_Test",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "latlongft",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        144.959425,
+        -37.816751,
+        144.969535,
+        -37.77976
+      ],
+      "id": "KenPhotos",
+      "class": "",
+      "Datasource": {
+        "file": "https://dl.dropbox.com/s/r6htjydgkeofi1q/Street%20Art%20Ken%20v3.csv"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "KenPhotos"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        144.961988,
+        -37.815454,
+        144.965329,
+        -37.812174
+      ],
+      "id": "flickrPhotos",
+      "class": "",
+      "Datasource": {
+        "file": "https://dl.dropbox.com/u/1039367/Flickr_Melbourne_streetart_sample_20130322_SW_fx.csv"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "flickrPhotos",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        141.00039998037278,
+        -39.49435999537517,
+        149.99990997911988,
+        -34.00016999582338
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from planet_osm_point) as POI",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696092.727463,-4792733.82902393,16697913.5979125,-4028824.85244296",
+        "dbname": "gis_new",
+        "host": "localhost",
+        "port": "5432",
+        "user": "ubuntu",
+        "password": "ubuntu",
+        "id": "points",
+        "project": "Street_Art_Test",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "points",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "points"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        144.75697500000004,
+        -37.999409,
+        145.35942,
+        -37.81745
+      ],
+      "id": "flickrfull",
+      "class": "",
+      "Datasource": {
+        "file": "https://dl.dropbox.com/u/31020756/Flickr_MelbourneGraffiti_Group_Photos_20130323.csv",
+        "id": "flickrfull",
+        "project": "Street_Art_Test",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "flickrfull"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        141.0000099546667,
+        -39.49994995987938,
+        149.99998994793248,
+        -34.00000993379165
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "planet_osm_line",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696049.31,-4793540.24,16697922.5,-4028803.36",
+        "dbname": "gis_new",
+        "host": "localhost",
+        "port": "5432",
+        "user": "ubuntu",
+        "password": "ubuntu"
+      },
+      "id": "wayslabels",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "wayslabels"
+    },
+    {
+      "extent": [
+        141.00003995839717,
+        -39.49994995987938,
+        149.999959944202,
+        -34.00000993379165
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from planet_osm_polygon where admin_level like '10') as suburbs",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "15696052.65,-4793540.24,16697919.16,-4028803.36",
+        "dbname": "gis_new",
+        "host": "localhost",
+        "port": "5432",
+        "user": "ubuntu",
+        "password": "ubuntu"
+      },
+      "id": "suburbs",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "suburbs"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Street Art 2",
+  "description": "Melbourne Street Art",
+  "attribution": "datahack",
+  "legend": "",
+  "version": "1.0.0"
+}
